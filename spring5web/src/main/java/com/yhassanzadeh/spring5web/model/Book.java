@@ -1,6 +1,7 @@
 package com.yhassanzadeh.spring5web.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ public class Book
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long mID;
     private String mTitle;
-    private String mPublisher;
+    private Publisher mPublisher;
     private String mISBAN;
 
     @ManyToMany()
@@ -20,19 +21,27 @@ public class Book
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> mAuthors;
 
-    public Book(String title, String publisher, String ISBAN, Set<Author> authors)
+    public Book(String title, String ISBAN)
+    {
+        mTitle = title;
+        mISBAN = ISBAN;
+        mAuthors = new HashSet<>();
+    }
+
+    public Book(String title, Publisher publisher, String ISBAN)
+    {
+        mTitle = title;
+        mPublisher = publisher;
+        mISBAN = ISBAN;
+        mAuthors = new HashSet<>();
+    }
+
+    public Book(String title, Publisher publisher, String ISBAN, Set<Author> authors)
     {
         mTitle = title;
         mPublisher = publisher;
         mISBAN = ISBAN;
         mAuthors = authors;
-    }
-
-    public Book(String title, String publisher, String ISBAN)
-    {
-        mTitle = title;
-        mPublisher = publisher;
-        mISBAN = ISBAN;
     }
 
     public Long getID()
@@ -55,15 +64,7 @@ public class Book
         mTitle = title;
     }
 
-    public String getPublisher()
-    {
-        return mPublisher;
-    }
 
-    public void setPublisher(String publisher)
-    {
-        mPublisher = publisher;
-    }
 
     public String getISBAN()
     {
@@ -83,6 +84,16 @@ public class Book
     public void setAuthors(Set<Author> authors)
     {
         mAuthors = authors;
+    }
+
+    public Publisher getPublisher()
+    {
+        return mPublisher;
+    }
+
+    public void setPublisher(Publisher publisher)
+    {
+        mPublisher = publisher;
     }
 
     @Override
@@ -107,7 +118,7 @@ public class Book
         return "Book{" +
                 "mID=" + mID +
                 ", mTitle='" + mTitle + '\'' +
-                ", mPublisher='" + mPublisher + '\'' +
+                ", mPublisher=" + mPublisher.getName() +
                 ", mISBAN='" + mISBAN + '\'' +
                 ", mAuthors=" + mAuthors +
                 '}';

@@ -1,6 +1,7 @@
 package com.yhassanzadeh.spring5web.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -24,6 +25,7 @@ public class Author
     {
         mFirstName = firstName;
         mLastName = lastName;
+        mBooks = new HashSet<>();
     }
 
     public Author(String firstName, String lastName, Set<Book> books)
