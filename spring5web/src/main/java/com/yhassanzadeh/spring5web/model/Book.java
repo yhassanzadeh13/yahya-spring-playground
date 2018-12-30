@@ -12,8 +12,10 @@ public class Book
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long mID;
     private String mTitle;
-    private Publisher mPublisher;
     private String mISBAN;
+
+    @OneToOne
+    private Publisher mPublisher;
 
     @ManyToMany()
     @JoinTable(name = "book_author",

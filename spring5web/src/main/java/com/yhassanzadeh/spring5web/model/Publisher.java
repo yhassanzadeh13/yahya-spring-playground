@@ -14,20 +14,11 @@ public class Publisher
     private String mName;
     private String mAddress;
 
-    private Set<Book> mBookSet;
 
     public Publisher(String name, String address)
     {
         mName = name;
         mAddress = address;
-        mBookSet = new HashSet<>();
-    }
-
-    public Publisher(String name, String address, Set<Book> bookSet)
-    {
-        mName = name;
-        mAddress = address;
-        mBookSet = bookSet;
     }
 
     public Long getID()
@@ -60,15 +51,6 @@ public class Publisher
         mAddress = address;
     }
 
-    public Set<Book> getBookSet()
-    {
-        return mBookSet;
-    }
-
-    public void setBookSet(Set<Book> bookSet)
-    {
-        mBookSet = bookSet;
-    }
 
     @Override
     public boolean equals(Object o)
@@ -92,7 +74,8 @@ public class Publisher
                 "mID=" + mID +
                 ", mName='" + mName + '\'' +
                 ", mAddress='" + mAddress + '\'' +
-                ", mBookSet=" + mBookSet +
                 '}';
     }
+
+
 }
