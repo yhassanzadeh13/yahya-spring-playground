@@ -41,8 +41,9 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>
         yahya.getBooks().add(GLARAS);
 
         mAuthorRepository.save(yahya);
-        mBookRepository.save(GLARAS);
         mPublisherRepository.save(FGCS);
+        mBookRepository.save(GLARAS);
+
 
         Author sanaz = new Author("Sanaz", "Taheri");
         Book GUARD = new Book("GUARD", "2222");
@@ -54,8 +55,9 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>
 
 
         mAuthorRepository.save(sanaz);
-        mBookRepository.save(GUARD);
         mPublisherRepository.save(IFIP);
+        mBookRepository.save(GUARD);
+
 
 
 

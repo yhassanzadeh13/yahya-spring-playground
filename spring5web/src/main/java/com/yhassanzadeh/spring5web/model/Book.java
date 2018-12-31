@@ -98,6 +98,7 @@ public class Book
         mPublisher = publisher;
     }
 
+
     @Override
     public boolean equals(Object o)
     {

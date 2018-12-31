@@ -15,6 +15,10 @@ public class Publisher
     private String mAddress;
 
 
+    public Publisher()
+    {
+    }
+
     public Publisher(String name, String address)
     {
         mName = name;
