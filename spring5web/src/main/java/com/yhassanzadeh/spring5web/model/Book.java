@@ -23,6 +23,10 @@ public class Book
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> mAuthors;
 
+    public Book()
+    {
+    }
+
     public Book(String title, String ISBAN)
     {
         mTitle = title;
