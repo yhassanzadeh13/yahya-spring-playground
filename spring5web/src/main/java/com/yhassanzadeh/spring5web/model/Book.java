@@ -50,12 +50,12 @@ public class Book
         mAuthors = authors;
     }
 
-    public Long getID()
+    public Long getId()
     {
         return mID;
     }
 
-    public void setID(Long ID)
+    public void setId(Long ID)
     {
         mID = ID;
     }
@@ -109,14 +109,14 @@ public class Book
         if (this == o) return true;
         if (!(o instanceof Book)) return false;
         Book book = (Book) o;
-        return Objects.equals(getID(), book.getID());
+        return Objects.equals(getId(), book.getId());
     }
 
     @Override
     public int hashCode()
     {
 
-        return Objects.hash(getID());
+        return Objects.hash(getId());
     }
 
     @Override
