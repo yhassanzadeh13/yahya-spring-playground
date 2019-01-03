@@ -10,7 +10,7 @@ public class Author
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long mID;
+    Long mId;
     private String mFirstName;
     private String mLastName;
 
@@ -35,14 +35,14 @@ public class Author
         mBooks = books;
     }
 
-    public Long getID()
+    public Long getId()
     {
-        return mID;
+        return mId;
     }
 
-    public void setID(Long ID)
+    public void setId(Long id)
     {
-        mID = ID;
+        mId = id;
     }
 
     public String getFirstName()
@@ -81,21 +81,21 @@ public class Author
         if (this == o) return true;
         if (!(o instanceof Author)) return false;
         Author author = (Author) o;
-        return Objects.equals(getID(), author.getID());
+        return Objects.equals(getId(), author.getId());
     }
 
     @Override
     public int hashCode()
     {
 
-        return Objects.hash(getID());
+        return Objects.hash(getId());
     }
 
     @Override
     public String toString()
     {
         return "Author{" +
-                "mID=" + mID +
+                "mId=" + mId +
                 ", mFirstName='" + mFirstName + '\'' +
                 ", mLastName='" + mLastName + '\'' +
                 ", mBooks=" + mBooks +

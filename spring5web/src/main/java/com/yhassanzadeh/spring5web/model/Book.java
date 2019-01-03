@@ -123,7 +123,7 @@ public class Book
     public String toString()
     {
         return "Book{" +
-                "mID=" + mID +
+                "mId=" + mID +
                 ", mTitle='" + mTitle + '\'' +
                 ", mPublisher=" + mPublisher.getName() +
                 ", mISBAN='" + mISBAN + '\'' +

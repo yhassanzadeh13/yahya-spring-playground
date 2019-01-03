@@ -75,7 +75,7 @@ public class Publisher
     public String toString()
     {
         return "Publisher{" +
-                "mID=" + mID +
+                "mId=" + mID +
                 ", mName='" + mName + '\'' +
                 ", mAddress='" + mAddress + '\'' +
                 '}';
